@@ -1,0 +1,4 @@
+train: /home/tyler/SPAV_Projects/results_yolov8
+val: /home/tyler/SPAV_Projects/results_yolov8
+nc: 1
+names: ['stop sign']
