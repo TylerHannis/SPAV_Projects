@@ -6,6 +6,7 @@ import warnings
 import logging
 import contextlib
 import io
+import random
 import torch
 from ultralytics import YOLO
 
@@ -13,20 +14,31 @@ from ultralytics import YOLO
 warnings.filterwarnings("ignore", category=FutureWarning)
 logging.getLogger("ultralytics").setLevel(logging.WARNING)
 
-# Define paths: assume you run the script from the project root (/home/tyler/SPAV_Projects)
-project_root = os.getcwd()  # Now project_root will be /home/tyler/SPAV_Projects
+# Define paths: assume you run this script from the project root (/home/tyler/SPAV_Projects)
+project_root = os.getcwd()  # e.g. /home/tyler/SPAV_Projects
 image_folder = os.path.join(project_root, "Image Captures", "RenamedImages")
 print("Looking for images in:", os.path.abspath(image_folder))
 
 # List all .jpg images in the folder
 image_files = [os.path.join(image_folder, f) for f in os.listdir(image_folder) if f.endswith(".jpg")]
 
-# Output directories for pre‑retraining images and annotations for YOLOv8 and YOLOv11
+# Output directories for retraining dataset for YOLOv8 and YOLOv11
 output_dir_yolov8 = os.path.join(project_root, "results_yolov8")
 output_dir_yolov11 = os.path.join(project_root, "results_yolov11")
 os.makedirs(output_dir_yolov8, exist_ok=True)
 os.makedirs(output_dir_yolov11, exist_ok=True)
-# (YOLOv5 output remains only for inference)
+
+# Directories for saving detection visualization (pre-inference)
+detection_dir_yolov8 = os.path.join(project_root, "detections", "yolov8")
+detection_dir_yolov11 = os.path.join(project_root, "detections", "yolov11")
+os.makedirs(detection_dir_yolov8, exist_ok=True)
+os.makedirs(detection_dir_yolov11, exist_ok=True)
+
+# Directories for saving improved images (post-inference)
+improvement_dir_yolov8 = os.path.join(project_root, "detections", "improvements", "yolov8")
+improvement_dir_yolov11 = os.path.join(project_root, "detections", "improvements", "yolov11")
+os.makedirs(improvement_dir_yolov8, exist_ok=True)
+os.makedirs(improvement_dir_yolov11, exist_ok=True)
 
 # Load original models
 model_yolov8 = YOLO("yolov8n.pt")
@@ -72,9 +84,7 @@ def draw_detections_yolov8(image, result, allowed_labels):
         label = f"{class_name}:{conf:.2f}"
         detection_info.append(label)
         cv2.rectangle(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
-        cv2.putText(image, label, (x1, y1 - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-        # YOLO-format annotation: class_id x_center y_center width height (normalized)
+        cv2.putText(image, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
         x_center = (x1 + x2) / 2.0
         y_center = (y1 + y2) / 2.0
         box_width = x2 - x1
@@ -84,13 +94,6 @@ def draw_detections_yolov8(image, result, allowed_labels):
     return image, count, detection_info, annotations
 
 def draw_detections_yolov5(image, result, allowed_labels):
-    """
-    Draws bounding boxes for allowed detections from YOLOv5.
-    Returns:
-      - Labeled image,
-      - Count of allowed detections,
-      - A list of detection info strings.
-    """
     count = 0
     detection_info = []
     for det in result.xyxy[0]:
@@ -103,8 +106,7 @@ def draw_detections_yolov5(image, result, allowed_labels):
         label = f"{class_name}:{conf:.2f}"
         detection_info.append(label)
         cv2.rectangle(image, (x1, y1), (x2, y2), (0, 0, 255), 2)
-        cv2.putText(image, label, (x1, y1 - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+        cv2.putText(image, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
     return image, count, detection_info
 
 def draw_detections_yolov11(image, result, allowed_labels):
@@ -123,9 +125,8 @@ def draw_detections_yolov11(image, result, allowed_labels):
         count += 1
         label = f"{class_name}:{conf:.2f}"
         detection_info.append(label)
-        cv2.rectangle(image, (x1, y1), (x2, y2), (255, 0, 0), 2)  # Blue for YOLOv11
-        cv2.putText(image, label, (x1, y1 - 10),
-                    cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
+        cv2.rectangle(image, (x1, y1), (x2, y2), (255, 0, 0), 2)
+        cv2.putText(image, label, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
         x_center = (x1 + x2) / 2.0
         y_center = (y1 + y2) / 2.0
         box_width = x2 - x1
@@ -138,6 +139,18 @@ def draw_detections_yolov11(image, result, allowed_labels):
 pre_results_yolov8 = {}
 pre_results_yolov5 = {}
 pre_results_yolov11 = {}
+
+# Lists to collect filenames for negatives and positives for retraining (for YOLOv8 and YOLOv11)
+pos_files_v8 = []
+neg_files_v8 = []
+pos_files_v11 = []
+neg_files_v11 = []
+
+# Create lists for saving detection visualizations (pre-inference)
+detection_dir_yolov8 = os.path.join(project_root, "detections", "yolov8")
+detection_dir_yolov11 = os.path.join(project_root, "detections", "yolov11")
+os.makedirs(detection_dir_yolov8, exist_ok=True)
+os.makedirs(detection_dir_yolov11, exist_ok=True)
 
 print("\n--- Pre-Retraining Inference ---")
 for img_path in image_files:
@@ -160,13 +173,24 @@ for img_path in image_files:
     pre_results_yolov8[base] = {"expected": expected_flag, "pre_count": count_pre_v8,
                                 "pre_status": pre_status_v8, "pre_time": pre_time_v8}
     print("YOLOv8 pre-detections:", ", ".join(info_pre_v8) if info_pre_v8 else "None")
-    # Save the original (unmodified) image and corresponding annotation file for retraining
+    # Save detection visualization for positives
     if count_pre_v8 > 0:
+        pos_files_v8.append(base)
+        cv2.imwrite(os.path.join(detection_dir_yolov8, base), labeled_img_v8)
+    # Save the image for retraining:
+    # For With_Signs, only save if detections were produced; for No_Signs, always save.
+    if expected_flag == "With_Signs":
+        if count_pre_v8 > 0:
+            cv2.imwrite(os.path.join(output_dir_yolov8, base), image)
+            txt_filename = os.path.splitext(base)[0] + ".txt"
+            with open(os.path.join(output_dir_yolov8, txt_filename), "w") as f:
+                for line in annotations_v8:
+                    f.write(line + "\n")
+    else:
+        neg_files_v8.append(base)
         cv2.imwrite(os.path.join(output_dir_yolov8, base), image)
-        txt_filename = os.path.splitext(base)[0] + ".txt"
-        with open(os.path.join(output_dir_yolov8, txt_filename), "w") as f:
-            for line in annotations_v8:
-                f.write(line + "\n")
+        # Create an empty annotation file
+        open(os.path.join(output_dir_yolov8, os.path.splitext(base)[0] + ".txt"), "w").close()
     
     # YOLOv5 pre‑inference (annotations not needed for retraining)
     start = time.time()
@@ -193,12 +217,36 @@ for img_path in image_files:
     pre_results_yolov11[base] = {"expected": expected_flag, "pre_count": count_pre_v11,
                                  "pre_status": pre_status_v11, "pre_time": pre_time_v11}
     print("YOLOv11 pre-detections:", ", ".join(info_pre_v11) if info_pre_v11 else "None")
-    if count_pre_v11 > 0:
+    if expected_flag == "With_Signs":
+        if count_pre_v11 > 0:
+            pos_files_v11.append(base)
+            cv2.imwrite(os.path.join(detection_dir_yolov11, base), labeled_img_v11)
+            cv2.imwrite(os.path.join(output_dir_yolov11, base), image)
+            txt_filename = os.path.splitext(base)[0] + ".txt"
+            with open(os.path.join(output_dir_yolov11, txt_filename), "w") as f:
+                for line in annotations_v11:
+                    f.write(line + "\n")
+    else:
+        neg_files_v11.append(base)
         cv2.imwrite(os.path.join(output_dir_yolov11, base), image)
-        txt_filename = os.path.splitext(base)[0] + ".txt"
-        with open(os.path.join(output_dir_yolov11, txt_filename), "w") as f:
-            for line in annotations_v11:
-                f.write(line + "\n")
+        open(os.path.join(output_dir_yolov11, os.path.splitext(base)[0] + ".txt"), "w").close()
+
+# To balance the dataset, randomly sample negatives to match the number of positives.
+if pos_files_v8:
+    num_pos_v8 = len(pos_files_v8)
+    if len(neg_files_v8) > num_pos_v8:
+        selected_neg_v8 = random.sample(neg_files_v8, num_pos_v8)
+    else:
+        selected_neg_v8 = neg_files_v8
+    # Overwrite the negative images in output_dir_yolov8 with the selected subset
+    # (They are already saved; this step just ensures balance in the YAML if needed.)
+if pos_files_v11:
+    num_pos_v11 = len(pos_files_v11)
+    if len(neg_files_v11) > num_pos_v11:
+        selected_neg_v11 = random.sample(neg_files_v11, num_pos_v11)
+    else:
+        selected_neg_v11 = neg_files_v11
+    # Again, the negatives are already saved; the YAML will include whatever is in the folder.
 
 # ----- Create Separate data.yaml Files for Retraining -----
 # For YOLOv8 retraining:
@@ -222,7 +270,7 @@ with open(data_yaml_v11, "w") as f:
 print(f"\nData YAML for YOLOv11 created at {data_yaml_v11} using images from {labeled_folder_v11}")
 
 # ----- Retraining Step -----
-epochs = 10  # Adjust as needed
+epochs = 20  # Adjust as needed
 
 print("\n--- Retraining Step ---")
 if os.path.exists(data_yaml_v8):
@@ -257,6 +305,7 @@ post_results_yolov8 = {}
 post_results_yolov5 = {}
 post_results_yolov11 = {}
 
+# Create directories for improvements if they don't exist (already created above)
 print("\n--- Post-Retraining Inference ---")
 # YOLOv8 post‑inference
 retrained_yolov8_file = "yolov8n_retrained.pt"
@@ -272,13 +321,19 @@ if os.path.exists(retrained_yolov8_file):
         start = time.time()
         result = model_yolov8_rt(image, verbose=False)
         post_time = time.time() - start
-        _, count_post, info_post, _ = draw_detections_yolov8(image.copy(), result, allowed_signs)
+        # Get the drawn image from the retrained model
+        labeled_post_img_v8, count_post, info_post, _ = draw_detections_yolov8(image.copy(), result, allowed_signs)
         post_status = ("TP" if (expected_flag=="With_Signs" and count_post > 0)
                        else ("FN" if expected_flag=="With_Signs" and count_post == 0
                              else ("TN" if expected_flag=="No_Signs" and count_post == 0 else "FP")))
         post_results_yolov8[base] = {"post_count": count_post,
                                      "post_status": post_status, "post_time": post_time}
         print(f"YOLOv8 post-detections for {base}:", ", ".join(info_post) if info_post else "None")
+        # If improved compared to pre-results, save the drawn image in improvements folder.
+        pre_count = pre_results_yolov8.get(base, {}).get("pre_count", 0)
+        # For With_Signs: improvement means more detections; for No_Signs: improvement means fewer detections.
+        if (expected_flag == "With_Signs" and count_post > pre_count) or (expected_flag == "No_Signs" and count_post < pre_count):
+            cv2.imwrite(os.path.join(improvement_dir_yolov8, base), labeled_post_img_v8)
 else:
     print("\nNo retrained YOLOv8 model found; skipping post‑inference for YOLOv8.")
 
@@ -321,13 +376,16 @@ if os.path.exists(retrained_yolov11_file):
         start = time.time()
         result = model_yolov11_rt(image, verbose=False)
         post_time = time.time() - start
-        _, count_post, info_post, _ = draw_detections_yolov11(image.copy(), result, allowed_signs)
+        labeled_post_img_v11, count_post, info_post, _ = draw_detections_yolov11(image.copy(), result, allowed_signs)
         post_status = ("TP" if (expected_flag=="With_Signs" and count_post > 0)
                        else ("FN" if expected_flag=="With_Signs" and count_post == 0
                              else ("TN" if expected_flag=="No_Signs" and count_post == 0 else "FP")))
         post_results_yolov11[base] = {"post_count": count_post,
                                       "post_status": post_status, "post_time": post_time}
         print(f"YOLOv11 post-detections for {base}:", ", ".join(info_post) if info_post else "None")
+        if (expected_flag == "With_Signs" and count_post > pre_results_yolov11.get(base, {}).get("pre_count", 0)) or \
+           (expected_flag == "No_Signs" and count_post < pre_results_yolov11.get(base, {}).get("pre_count", 0)):
+            cv2.imwrite(os.path.join(improvement_dir_yolov11, base), labeled_post_img_v11)
 else:
     print("\nNo retrained YOLOv11 model found; skipping post‑inference for YOLOv11.")
 

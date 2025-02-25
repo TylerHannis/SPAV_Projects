@@ -1,3 +1,5 @@
 mavs_config.txt
 *.pt
 tf/
+results_yolov8.cache
+results_yolov11.cache
