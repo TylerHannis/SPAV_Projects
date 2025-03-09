@@ -7,9 +7,13 @@ from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_sc
 # Function to parse command-line arguments
 def parse_arguments():
     parser = argparse.ArgumentParser(description="YOLO Inference for Traffic Sign Detection")
-    parser.add_argument("--with_signs_dir", type=str, required=True, help="Path to folder containing images with traffic signs")
-    parser.add_argument("--without_signs_dir", type=str, required=True, help="Path to folder containing images without traffic signs")
-    parser.add_argument("--yolo_version", type=str, choices=["yolov5", "yolov8", "yolov11", "retrained"], required=True, help="Specify YOLO version (yolov5, yolov8, yolov11)")
+    parser.add_argument("--with_signs_dir", type=str, required=True, help="Path to folder containing "
+                "images with traffic signs")
+    parser.add_argument("--without_signs_dir", type=str, required=True, help="Path to folder "
+                "containing images without traffic signs")
+    parser.add_argument("--yolo_version", type=str, choices=["yolov5", "yolov8", "yolov11", 
+                                                             "retrained"], 
+                        required=True, help="Specify YOLO version (yolov5, yolov8, yolov11)")
     
     return parser.parse_args()
 

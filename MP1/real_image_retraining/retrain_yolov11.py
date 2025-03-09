@@ -5,8 +5,10 @@ from ultralytics import YOLO
 # Function to parse command-line arguments
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Train YOLOv11 on Stop and Yield Sign Dataset")
-    parser.add_argument("--train_dir", type=str, required=True, help="Path to training dataset (images and labels)")
-    parser.add_argument("--val_dir", type=str, required=True, help="Path to validation dataset (images and labels)")
+    parser.add_argument("--train_dir", type=str, required=True, help="Path to training "
+                        "dataset (images and labels)")
+    parser.add_argument("--val_dir", type=str, required=True, help="Path to validation "
+                        "dataset (images and labels)")
     parser.add_argument("--epochs", type=int, default=20, help="Number of training epochs")
     parser.add_argument("--batch_size", type=int, default=16, help="Batch size for training")
     parser.add_argument("--img_size", type=int, default=640, help="Image size for training")
