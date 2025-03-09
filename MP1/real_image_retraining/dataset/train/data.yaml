@@ -1,0 +1,6 @@
+
+train: /home/joshd/repos/SPAV_Projects/MP1/real_image_retraining/dataset/train/images
+val: /home/joshd/repos/SPAV_Projects/MP1/real_image_retraining/dataset/val/images
+
+nc: 2
+names: ["stop_sign", "Unyielding"]

@@ -9,7 +9,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="YOLO Inference for Traffic Sign Detection")
     parser.add_argument("--with_signs_dir", type=str, required=True, help="Path to folder containing images with traffic signs")
     parser.add_argument("--without_signs_dir", type=str, required=True, help="Path to folder containing images without traffic signs")
-    parser.add_argument("--yolo_version", type=str, choices=["yolov5", "yolov8", "yolov11"], required=True, help="Specify YOLO version (yolov5, yolov8, yolov11)")
+    parser.add_argument("--yolo_version", type=str, choices=["yolov5", "yolov8", "yolov11", "retrained"], required=True, help="Specify YOLO version (yolov5, yolov8, yolov11)")
     
     return parser.parse_args()
 
@@ -22,7 +22,8 @@ def main():
     model_map = {
         "yolov5": "yolov5s.pt",  # Small YOLOv5 model
         "yolov8": "yolov8n.pt",  # Nano YOLOv8 model
-        "yolov11": "yolo11n.pt",  # YOLOv11 model
+        "yolov11": "yolo11n.pt",
+        "retrained": "runs/detect/train/weights/best.pt"  # YOLOv11 model
     }
 
     # Load the selected YOLO model
