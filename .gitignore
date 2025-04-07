@@ -3,3 +3,4 @@ mavs_config.txt
 tf/
 results_yolov8.cache
 results_yolov11.cache
+*.DS_Store
