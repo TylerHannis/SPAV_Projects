@@ -7,3 +7,4 @@ dependencies:
   - opencv
   - glob2
   - pandas
+  - jinja2

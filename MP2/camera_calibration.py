@@ -50,6 +50,10 @@ print("\nReading files from directory\n", image_dir)
 os.chdir(image_dir)
 image_filenames = glob2.glob('*.png')
 
+
+# collect the image results
+img_results = {}
+
 # Loop through all the image files
 num_good_images = 0
 for fname in image_filenames:
@@ -68,6 +72,7 @@ for fname in image_filenames:
     # If found, add object points, image points (after refining them)
     if ret:
         print("Processing file ", fname, " (good image)")
+        img_results.update({fname: "good"})
         num_good_images += 1
         objpoints.append(objp)
 
@@ -81,8 +86,10 @@ for fname in image_filenames:
 
     else:
         print("Processing file", fname, "(bad image)")
+        img_results.update({fname: "bad"})
 
 cv2.destroyAllWindows()
+img_df = pd.DataFrame([img_results])
 
 print("\nThe number of good images in this dataset is", num_good_images, ".")
 
@@ -91,7 +98,7 @@ ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.sh
 
 # Print results
 distortion_params = ["k1", "k2", "p1", "p2", "k3", "k4", "k5", "k6"]
-
+camera_coeff = {}
 if ret:
     print("Calibration was successful.")
 
@@ -103,11 +110,12 @@ if ret:
     flattened = [val for sublist in dist for val in sublist]
     for jj in range(0, len(flattened)):
         print(distortion_params[jj], "=", flattened[jj], "\n")
+        camera_coeff.update({distortion_params[jj]: flattened[jj]})
     print("\n\n")
 
 else:
     print("Calibration was not successful.")
-
+camera_df = pd.DataFrame([camera_coeff])
 # Add code here to use calibrated images to undistort one of the images and report overall error (hint: see [1] and [2])
 img = cv2.imread(image_filenames[1])
 h, w = img.shape[:2]
@@ -132,8 +140,16 @@ for i in range(len(objpoints)):
     total_error += error
     total_error_squared += error**2
 
-print("Mean error:", total_error/len(objpoints), "\n\n")
-print("Root mean square error:", (total_error_squared/len(objpoints))**0.5, "\n\n")
+
+mean_error = total_error/len(objpoints)
+rmse = (total_error/len(objpoints))**0.5
+error_df = pd.DataFrame([{"mean error": mean_error, 
+                 "rmse": rmse
+                 }])
+
+
+print("Mean error:", mean_error, "\n\n")
+print("Root mean square error:", rmse, "\n\n")
 
 # Wait for a keypress
 print("Put mouse on either output image and press any key to exit.\n\n")
@@ -143,3 +159,11 @@ print("Put mouse on either output image and press any key to exit.\n\n")
 #        break
 
 cv2.destroyAllWindows()
+print("Image results table: ")
+print(img_df.to_latex())
+
+print("\nCamera coeff results table: ")
+print(camera_df.to_latex())
+
+print("\Error table: ")
+print(error_df.to_latex())
