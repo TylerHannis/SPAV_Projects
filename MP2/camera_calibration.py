@@ -42,7 +42,7 @@ imgpoints = []   # 2d points in image plane.
 # So we don't have to hard code paths and it looks like we know what
 # we are doing
 cwd = os.getcwd()
-# currently, it looks in "./data2", update if needed
+# currently, it looks in "data2", update if needed
 image_dir = os.path.join(cwd, "MP2", "data2")                                         # Choose images1 or images2
 print("\nReading files from directory\n", image_dir)
 
@@ -70,6 +70,7 @@ for fname in image_filenames:
     ret, corners = cv2.findChessboardCorners(gray, num_corners, cv2.CALIB_CB_NORMALIZE_IMAGE)
 
     # If found, add object points, image points (after refining them)
+    # add the filenames and status (good, bad) to the dataframe for analysis
     if ret:
         print("Processing file ", fname, " (good image)")
         img_results.update({fname: "good"})
@@ -110,6 +111,7 @@ if ret:
     flattened = [val for sublist in dist for val in sublist]
     for jj in range(0, len(flattened)):
         print(distortion_params[jj], "=", flattened[jj], "\n")
+        # Add the camera coeffs to the dataframe for later
         camera_coeff.update({distortion_params[jj]: flattened[jj]})
     print("\n\n")
 
@@ -140,7 +142,7 @@ for i in range(len(objpoints)):
     total_error += error
     total_error_squared += error**2
 
-
+# Collect the error calculations for later
 mean_error = total_error/len(objpoints)
 rmse = (total_error/len(objpoints))**0.5
 error_df = pd.DataFrame([{"mean error": mean_error, 
@@ -154,11 +156,14 @@ print("Root mean square error:", rmse, "\n\n")
 # Wait for a keypress
 print("Put mouse on either output image and press any key to exit.\n\n")
 
+# Uncomment to be able to grab images for qualitative analysis
 #while True:
 #    if cv2.waitKey(0) > -1:
 #        break
 
 cv2.destroyAllWindows()
+
+# Print the dataframes to a latex table for easy addition to the report
 print("Image results table: ")
 print(img_df.to_latex())
 
