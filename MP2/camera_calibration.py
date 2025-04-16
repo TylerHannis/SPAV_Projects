@@ -118,20 +118,43 @@ if ret:
 else:
     print("Calibration was not successful.")
 camera_df = pd.DataFrame([camera_coeff])
-# Add code here to use calibrated images to undistort one of the images and report overall error (hint: see [1] and [2])
-img = cv2.imread(image_filenames[1])
+# Use calibrated images to undistort one of the images and report overall error
+img_index = 10  # or any index from 0 to len(image_filenames) - 1
+source_filename = image_filenames[img_index]
+img = cv2.imread(source_filename)
 h, w = img.shape[:2]
+
+# Compute new camera matrix for optimal undistortion
 newcameramtx, roi = cv2.getOptimalNewCameraMatrix(mtx, dist, (w, h), 1, (w, h))
 
-# undistort
+# Undistort the image
 dst = cv2.undistort(img, mtx, dist, None, newcameramtx)
 
-# Plot the image uncropped and cropped
-cv2.imshow("Uncropped, undistorted image (dataset=" + image_dir + ")", dst)
+# Save uncropped undistorted image
+uncropped_filename = f"undistorted_uncropped_{os.path.basename(source_filename)}"
 
+# Show the uncropped image with window name including the filename
+cv2.imshow(f"Uncropped: {source_filename}", dst)
+
+
+
+# Crop and show the image using the ROI
 x, y, w, h = roi
 dst_crop = dst[y:y+h, x:x+w]
-cv2.imshow("Cropped, undistorted image (dataset=" + image_dir + ")", dst_crop)
+
+# Save cropped undistorted image
+cropped_filename = f"undistorted_cropped_{os.path.basename(source_filename)}"
+
+# Show cropped image with filename in the window title
+cv2.imshow(f"Cropped: {source_filename}", dst_crop)
+
+
+success_uncropped = cv2.imwrite(uncropped_filename, dst)
+success_cropped = cv2.imwrite(cropped_filename, dst_crop)
+
+print(f"Current working directory: {os.getcwd()}")
+print(f"Uncropped saved? {success_uncropped} → {uncropped_filename}")
+print(f"Cropped saved?   {success_cropped} → {cropped_filename}")
 
 # Reprojection error
 total_error = 0.0
@@ -157,9 +180,9 @@ print("Root mean square error:", rmse, "\n\n")
 print("Put mouse on either output image and press any key to exit.\n\n")
 
 # Uncomment to be able to grab images for qualitative analysis
-#while True:
-#    if cv2.waitKey(0) > -1:
-#        break
+while True:
+    if cv2.waitKey(0) > -1:
+        break
 
 cv2.destroyAllWindows()
 
