@@ -5,3 +5,4 @@ results_yolov8.cache
 results_yolov11.cache
 *.DS_Store
 *.png
+MP2/.mp2
