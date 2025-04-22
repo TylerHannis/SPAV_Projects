@@ -96,7 +96,7 @@ print("\nThe number of good images in this dataset is", num_good_images, ".")
 
 # Now perform the calibration
 ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
-
+rnd_mtx = np.round(mtx, decimals=3)
 # Print results
 distortion_params = ["k1", "k2", "p1", "p2", "k3", "k4", "k5", "k6"]
 camera_coeff = {}
@@ -104,7 +104,7 @@ if ret:
     print("Calibration was successful.")
 
     # Camera calibration matrix
-    print("\n\nThe camera matrix is\n\n", mtx)
+    print("\n\nThe camera matrix is\n\n", rnd_mtx)
 
     # Distortion coeff.
     print("\n\nCamera distortion coefficents:\n")
@@ -112,7 +112,7 @@ if ret:
     for jj in range(0, len(flattened)):
         print(distortion_params[jj], "=", flattened[jj], "\n")
         # Add the camera coeffs to the dataframe for later
-        camera_coeff.update({distortion_params[jj]: flattened[jj]})
+        camera_coeff.update({distortion_params[jj]: format(flattened[jj], '.3f')})
     print("\n\n")
 
 else:
@@ -168,21 +168,21 @@ for i in range(len(objpoints)):
 # Collect the error calculations for later
 mean_error = total_error/len(objpoints)
 rmse = (total_error/len(objpoints))**0.5
-error_df = pd.DataFrame([{"mean error": mean_error, 
-                 "rmse": rmse
+error_df = pd.DataFrame([{"mean error": format(mean_error, '.3f'), 
+                 "rmse": format(rmse, '.3f'),
                  }])
 
 
-print("Mean error:", mean_error, "\n\n")
+print(f"Mean error:, {mean_error:.3f}, \n\n")
 print("Root mean square error:", rmse, "\n\n")
 
 # Wait for a keypress
 print("Put mouse on either output image and press any key to exit.\n\n")
 
 # Uncomment to be able to grab images for qualitative analysis
-while True:
-    if cv2.waitKey(0) > -1:
-        break
+#while True:
+#    if cv2.waitKey(0) > -1:
+#        break
 
 cv2.destroyAllWindows()
 
