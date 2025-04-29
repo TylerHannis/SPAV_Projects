@@ -1,0 +1,373 @@
+MAVS data path is C:\Dev\SPAV_Projects\.conda\lib\site-packages\mavspy\data
+
+Using scene file: /scenes/brick_scene.json
+Using sensor: OS2
+
+
+Loop   0.  Lidar points=    27648.  Brick points=     0.  Brick distance= 45.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop   1.  Lidar points=    27648.  Brick points=     0.  Brick distance= 44.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop   2.  Lidar points=    27648.  Brick points=     0.  Brick distance= 44.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop   3.  Lidar points=    27648.  Brick points=     0.  Brick distance= 44.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop   4.  Lidar points=    27648.  Brick points=     0.  Brick distance= 44.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop   5.  Lidar points=    27648.  Brick points=     0.  Brick distance= 43.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop   6.  Lidar points=    27648.  Brick points=     0.  Brick distance= 43.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop   7.  Lidar points=    27648.  Brick points=     0.  Brick distance= 43.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop   8.  Lidar points=    27648.  Brick points=     0.  Brick distance= 43.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop   9.  Lidar points=    27648.  Brick points=     0.  Brick distance= 42.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  10.  Lidar points=    27648.  Brick points=     0.  Brick distance= 42.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  11.  Lidar points=    27648.  Brick points=     0.  Brick distance= 42.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  12.  Lidar points=    27648.  Brick points=     0.  Brick distance= 42.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  13.  Lidar points=    27648.  Brick points=     0.  Brick distance= 41.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  14.  Lidar points=    27648.  Brick points=     0.  Brick distance= 41.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  15.  Lidar points=    27649.  Brick points=     1.  Brick distance= 41.25 m.
+Ignoring fixed y limits to fulfill fixed data aspect with adjustable data limits.
+Loop  16.  Lidar points=    27648.  Brick points=     0.  Brick distance= 41.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  17.  Lidar points=    27648.  Brick points=     0.  Brick distance= 40.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  18.  Lidar points=    27649.  Brick points=     1.  Brick distance= 40.50 m.
+Ignoring fixed y limits to fulfill fixed data aspect with adjustable data limits.
+Loop  19.  Lidar points=    27649.  Brick points=     1.  Brick distance= 40.25 m.
+Ignoring fixed y limits to fulfill fixed data aspect with adjustable data limits.
+Loop  20.  Lidar points=    27649.  Brick points=     1.  Brick distance= 40.00 m.
+Ignoring fixed y limits to fulfill fixed data aspect with adjustable data limits.
+Loop  21.  Lidar points=    27648.  Brick points=     0.  Brick distance= 39.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  22.  Lidar points=    27648.  Brick points=     0.  Brick distance= 39.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  23.  Lidar points=    27648.  Brick points=     0.  Brick distance= 39.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  24.  Lidar points=    28672.  Brick points=     0.  Brick distance= 39.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  25.  Lidar points=    28672.  Brick points=     0.  Brick distance= 38.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  26.  Lidar points=    28672.  Brick points=     0.  Brick distance= 38.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  27.  Lidar points=    28672.  Brick points=     0.  Brick distance= 38.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  28.  Lidar points=    28672.  Brick points=     0.  Brick distance= 38.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  29.  Lidar points=    28672.  Brick points=     0.  Brick distance= 37.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  30.  Lidar points=    28672.  Brick points=     0.  Brick distance= 37.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  31.  Lidar points=    28672.  Brick points=     0.  Brick distance= 37.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  32.  Lidar points=    28672.  Brick points=     0.  Brick distance= 37.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  33.  Lidar points=    28672.  Brick points=     0.  Brick distance= 36.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  34.  Lidar points=    28672.  Brick points=     0.  Brick distance= 36.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  35.  Lidar points=    28672.  Brick points=     0.  Brick distance= 36.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  36.  Lidar points=    28672.  Brick points=     0.  Brick distance= 36.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  37.  Lidar points=    28671.  Brick points=     0.  Brick distance= 35.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  38.  Lidar points=    28671.  Brick points=     0.  Brick distance= 35.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  39.  Lidar points=    28671.  Brick points=     0.  Brick distance= 35.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  40.  Lidar points=    28671.  Brick points=     0.  Brick distance= 35.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  41.  Lidar points=    28671.  Brick points=     0.  Brick distance= 34.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  42.  Lidar points=    28671.  Brick points=     0.  Brick distance= 34.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  43.  Lidar points=    28671.  Brick points=     0.  Brick distance= 34.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  44.  Lidar points=    28671.  Brick points=     0.  Brick distance= 34.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  45.  Lidar points=    28671.  Brick points=     0.  Brick distance= 33.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  46.  Lidar points=    28671.  Brick points=     0.  Brick distance= 33.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  47.  Lidar points=    28671.  Brick points=     0.  Brick distance= 33.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  48.  Lidar points=    28671.  Brick points=     0.  Brick distance= 33.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  49.  Lidar points=    28671.  Brick points=     0.  Brick distance= 32.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  50.  Lidar points=    28671.  Brick points=     0.  Brick distance= 32.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  51.  Lidar points=    28671.  Brick points=     0.  Brick distance= 32.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  52.  Lidar points=    28672.  Brick points=     1.  Brick distance= 32.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  53.  Lidar points=    28672.  Brick points=     1.  Brick distance= 31.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  54.  Lidar points=    28672.  Brick points=     1.  Brick distance= 31.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  55.  Lidar points=    28672.  Brick points=     1.  Brick distance= 31.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  56.  Lidar points=    28672.  Brick points=     1.  Brick distance= 31.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  57.  Lidar points=    28672.  Brick points=     0.  Brick distance= 30.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  58.  Lidar points=    28672.  Brick points=     0.  Brick distance= 30.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  59.  Lidar points=    28672.  Brick points=     0.  Brick distance= 30.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  60.  Lidar points=    28672.  Brick points=     0.  Brick distance= 30.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  61.  Lidar points=    28672.  Brick points=     0.  Brick distance= 29.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  62.  Lidar points=    28672.  Brick points=     0.  Brick distance= 29.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  63.  Lidar points=    28671.  Brick points=     0.  Brick distance= 29.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  64.  Lidar points=    28671.  Brick points=     0.  Brick distance= 29.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  65.  Lidar points=    28671.  Brick points=     0.  Brick distance= 28.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  66.  Lidar points=    28671.  Brick points=     0.  Brick distance= 28.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  67.  Lidar points=    28671.  Brick points=     0.  Brick distance= 28.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  68.  Lidar points=    28671.  Brick points=     0.  Brick distance= 28.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  69.  Lidar points=    28671.  Brick points=     0.  Brick distance= 27.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  70.  Lidar points=    28671.  Brick points=     0.  Brick distance= 27.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  71.  Lidar points=    28671.  Brick points=     0.  Brick distance= 27.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  72.  Lidar points=    28671.  Brick points=     0.  Brick distance= 27.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  73.  Lidar points=    28671.  Brick points=     0.  Brick distance= 26.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  74.  Lidar points=    28671.  Brick points=     0.  Brick distance= 26.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  75.  Lidar points=    28671.  Brick points=     0.  Brick distance= 26.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  76.  Lidar points=    28672.  Brick points=     1.  Brick distance= 26.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  77.  Lidar points=    28672.  Brick points=     1.  Brick distance= 25.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  78.  Lidar points=    28672.  Brick points=     1.  Brick distance= 25.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  79.  Lidar points=    28672.  Brick points=     0.  Brick distance= 25.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  80.  Lidar points=    28672.  Brick points=     0.  Brick distance= 25.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  81.  Lidar points=    28671.  Brick points=     0.  Brick distance= 24.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  82.  Lidar points=    28671.  Brick points=     0.  Brick distance= 24.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  83.  Lidar points=    28671.  Brick points=     0.  Brick distance= 24.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  84.  Lidar points=    28671.  Brick points=     0.  Brick distance= 24.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  85.  Lidar points=    28671.  Brick points=     0.  Brick distance= 23.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  86.  Lidar points=    28671.  Brick points=     0.  Brick distance= 23.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  87.  Lidar points=    28671.  Brick points=     0.  Brick distance= 23.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  88.  Lidar points=    28671.  Brick points=     0.  Brick distance= 23.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  89.  Lidar points=    28671.  Brick points=     0.  Brick distance= 22.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  90.  Lidar points=    28671.  Brick points=     0.  Brick distance= 22.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  91.  Lidar points=    28671.  Brick points=     1.  Brick distance= 22.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  92.  Lidar points=    28672.  Brick points=     2.  Brick distance= 22.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  93.  Lidar points=    28672.  Brick points=     2.  Brick distance= 21.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  94.  Lidar points=    28671.  Brick points=     2.  Brick distance= 21.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  95.  Lidar points=    28671.  Brick points=     0.  Brick distance= 21.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  96.  Lidar points=    28671.  Brick points=     0.  Brick distance= 21.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  97.  Lidar points=    28671.  Brick points=     0.  Brick distance= 20.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  98.  Lidar points=    28671.  Brick points=     0.  Brick distance= 20.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop  99.  Lidar points=    28671.  Brick points=     0.  Brick distance= 20.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 100.  Lidar points=    28671.  Brick points=     2.  Brick distance= 20.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 101.  Lidar points=    28671.  Brick points=     2.  Brick distance= 19.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 102.  Lidar points=    28671.  Brick points=     2.  Brick distance= 19.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 103.  Lidar points=    28671.  Brick points=     2.  Brick distance= 19.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 104.  Lidar points=    28671.  Brick points=     3.  Brick distance= 19.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 105.  Lidar points=    28671.  Brick points=     3.  Brick distance= 18.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 106.  Lidar points=    28671.  Brick points=     3.  Brick distance= 18.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 107.  Lidar points=    28671.  Brick points=     0.  Brick distance= 18.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 108.  Lidar points=    28671.  Brick points=     0.  Brick distance= 18.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 109.  Lidar points=    28671.  Brick points=     0.  Brick distance= 17.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 110.  Lidar points=    28671.  Brick points=     2.  Brick distance= 17.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 111.  Lidar points=    28671.  Brick points=     2.  Brick distance= 17.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 112.  Lidar points=    28670.  Brick points=     2.  Brick distance= 17.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 113.  Lidar points=    28671.  Brick points=     3.  Brick distance= 16.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 114.  Lidar points=    28671.  Brick points=     3.  Brick distance= 16.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 115.  Lidar points=    28671.  Brick points=     3.  Brick distance= 16.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 116.  Lidar points=    28671.  Brick points=     0.  Brick distance= 16.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 117.  Lidar points=    28671.  Brick points=     2.  Brick distance= 15.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 118.  Lidar points=    28670.  Brick points=     2.  Brick distance= 15.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 119.  Lidar points=    28670.  Brick points=     2.  Brick distance= 15.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 120.  Lidar points=    28671.  Brick points=     3.  Brick distance= 15.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 121.  Lidar points=    28671.  Brick points=     3.  Brick distance= 14.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 122.  Lidar points=    28671.  Brick points=     0.  Brick distance= 14.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 123.  Lidar points=    28671.  Brick points=     2.  Brick distance= 14.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 124.  Lidar points=    28670.  Brick points=     2.  Brick distance= 14.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 125.  Lidar points=    28670.  Brick points=     2.  Brick distance= 13.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 126.  Lidar points=    28671.  Brick points=     3.  Brick distance= 13.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 127.  Lidar points=    28671.  Brick points=     3.  Brick distance= 13.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 128.  Lidar points=    28670.  Brick points=     2.  Brick distance= 13.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 129.  Lidar points=    28670.  Brick points=     2.  Brick distance= 12.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 130.  Lidar points=    28671.  Brick points=     3.  Brick distance= 12.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 131.  Lidar points=    28671.  Brick points=     3.  Brick distance= 12.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 132.  Lidar points=    28670.  Brick points=     5.  Brick distance= 12.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 133.  Lidar points=    28670.  Brick points=     2.  Brick distance= 11.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 134.  Lidar points=    28671.  Brick points=     3.  Brick distance= 11.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 135.  Lidar points=    28670.  Brick points=     3.  Brick distance= 11.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 136.  Lidar points=    28670.  Brick points=     5.  Brick distance= 11.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 137.  Lidar points=    28670.  Brick points=     3.  Brick distance= 10.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 138.  Lidar points=    28670.  Brick points=     5.  Brick distance= 10.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 139.  Lidar points=    28670.  Brick points=     9.  Brick distance= 10.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 140.  Lidar points=    28670.  Brick points=     4.  Brick distance= 10.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 141.  Lidar points=    28670.  Brick points=     9.  Brick distance=  9.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 142.  Lidar points=    28670.  Brick points=     9.  Brick distance=  9.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 143.  Lidar points=    28670.  Brick points=     5.  Brick distance=  9.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 144.  Lidar points=    28670.  Brick points=     9.  Brick distance=  9.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 145.  Lidar points=    28670.  Brick points=     5.  Brick distance=  8.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 146.  Lidar points=    28670.  Brick points=     9.  Brick distance=  8.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 147.  Lidar points=    28670.  Brick points=    10.  Brick distance=  8.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 148.  Lidar points=    28669.  Brick points=     9.  Brick distance=  8.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 149.  Lidar points=    28670.  Brick points=    14.  Brick distance=  7.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 150.  Lidar points=    28669.  Brick points=     9.  Brick distance=  7.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 151.  Lidar points=    28669.  Brick points=    10.  Brick distance=  7.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 152.  Lidar points=    28670.  Brick points=    18.  Brick distance=  7.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 153.  Lidar points=    28671.  Brick points=    20.  Brick distance=  6.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 154.  Lidar points=    28672.  Brick points=    21.  Brick distance=  6.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 155.  Lidar points=    28672.  Brick points=    28.  Brick distance=  6.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 156.  Lidar points=    28672.  Brick points=    28.  Brick distance=  6.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 157.  Lidar points=    28672.  Brick points=    28.  Brick distance=  5.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 158.  Lidar points=    28672.  Brick points=    28.  Brick distance=  5.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 159.  Lidar points=    28672.  Brick points=    32.  Brick distance=  5.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 160.  Lidar points=    28672.  Brick points=    43.  Brick distance=  5.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 161.  Lidar points=    28672.  Brick points=    36.  Brick distance=  4.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 162.  Lidar points=    28672.  Brick points=    27.  Brick distance=  4.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 163.  Lidar points=    28672.  Brick points=     9.  Brick distance=  4.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 164.  Lidar points=    28672.  Brick points=     0.  Brick distance=  4.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 165.  Lidar points=    28672.  Brick points=     0.  Brick distance=  3.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 166.  Lidar points=    28672.  Brick points=     0.  Brick distance=  3.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 167.  Lidar points=    28672.  Brick points=     0.  Brick distance=  3.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 168.  Lidar points=    28672.  Brick points=     0.  Brick distance=  3.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 169.  Lidar points=    28672.  Brick points=     0.  Brick distance=  2.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 170.  Lidar points=    28672.  Brick points=     0.  Brick distance=  2.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 171.  Lidar points=    28672.  Brick points=     0.  Brick distance=  2.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 172.  Lidar points=    28672.  Brick points=     0.  Brick distance=  2.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 173.  Lidar points=    28672.  Brick points=     0.  Brick distance=  1.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 174.  Lidar points=    28672.  Brick points=     0.  Brick distance=  1.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 175.  Lidar points=    28672.  Brick points=     0.  Brick distance=  1.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 176.  Lidar points=    28672.  Brick points=     0.  Brick distance=  1.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 177.  Lidar points=    28672.  Brick points=     0.  Brick distance=  0.75 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 178.  Lidar points=    28672.  Brick points=     0.  Brick distance=  0.50 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 179.  Lidar points=    28672.  Brick points=     0.  Brick distance=  0.25 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+Loop 180.  Lidar points=    28672.  Brick points=     0.  Brick distance=  0.00 m.
+Ignoring fixed x limits to fulfill fixed data aspect with adjustable data limits.
+
+Sim complete.
+
+
+Saved data to file simulation_OS2_results.txt

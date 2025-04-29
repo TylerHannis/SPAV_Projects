@@ -65,7 +65,7 @@ sensor_height = 1.0
     "OS1"
     "OS2"
 """
-lidar_type = "M8"
+lidar_type = "OS2"
 
 # The distance the vehicle will move between scans
 # scan_spacing = vehicle_velocity/scan_rate
